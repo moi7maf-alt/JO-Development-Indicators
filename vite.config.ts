@@ -1,7 +1,13 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
 
+export default defineConfig({
+  // هذا يضبط المسار الأساسي ليتطابق مع مسار المستودع الفرعي على GitHub Pages
+  base: '/JO-Development-Indicators/', 
+  // ... بقية الإعدادات (مثل plugins)
+})
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
