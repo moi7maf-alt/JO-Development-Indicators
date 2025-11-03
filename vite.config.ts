@@ -21,3 +21,8 @@ export default defineConfig(({ mode }) => {
       }
     };
 });
+export default defineConfig({
+  // هذا السطر يضيف اسم المستودع كمسار أساسي
+  base: '/JO-Development-Indicators/', 
+  plugins: [react()],
+})
