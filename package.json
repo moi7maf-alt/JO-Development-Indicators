@@ -8,6 +8,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  {
+  "homepage": "https://moi7maf-alt.github.io/JO-Development-Indicators",
+  "name": "jo-development-indicators",
+  // ... بقية الملف
+}
   "dependencies": {
     "@google/genai": "^1.28.0",
     "recharts": "^3.3.0",
@@ -23,4 +28,3 @@
     "vite": "^6.2.0"
   }
 }
-"homepage": "http://moi7maf-alt.github.io/JO-Development-Indicators",
