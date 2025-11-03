@@ -1,34 +1,16 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite'
 
+// هذا هو التصدير الافتراضي الوحيد المسموح به في الملف
 export default defineConfig({
-  // هذا يضبط المسار الأساسي ليتطابق مع مسار المستودع الفرعي على GitHub Pages
+  // **التعديل الأهم:** يضبط المسار الأساسي ليتطابق مع اسم المستودع
   base: '/JO-Development-Indicators/', 
-  // ... بقية الإعدادات (مثل plugins)
-})
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-      },
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
-});
-export default defineConfig({
-  // هذا السطر يضيف اسم المستودع كمسار أساسي
-  base: '/JO-Development-Indicators/', 
+  
   plugins: [react()],
-})
+
+  // هذا الجزء قد يكون ضرورياً لضمان عمل المتغيرات البيئية (Env Vars)
+  // خاصة عند استخدام Vercel مع مفاتيح API
+  define: {
+    'process.env': process.env,
+  },
+});
