@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://moi7maf-alt.github.io/JO-Development-Indicators", // ⬅️ تم وضعها هنا كخاصية عليا
   "scripts": {
     "dev": "vite",
     "build": "vite build",
